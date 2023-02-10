@@ -1,5 +1,5 @@
 variable "vsphere_server" {
-  default = "vcelab01.lab"
+  default = "vca70.eveng.dev"
   type    = string
 }
 
@@ -9,33 +9,33 @@ variable "vsphere_user" {
 }
 
 variable "vsphere_password" {
-  default   = "PASSWORD"
+  default   = "Admin!2345"
   type      = string
   sensitive = true
 }
 
 variable "datacenter" {
-  default = "Datacenter"
+  default = "NSX-T"
   type    = string
 }
 
 variable "cluster" {
-  default = "LAB"
+  default = "prod"
   type    = string
 }
 
 variable "datastore" {
-  default = "datastore1"
+  default = "esxi1"
   type    = string
 }
 
 variable "network_name" {
-  default = "VLAN_LAB"
+  default = "DPortGroup"
   type    = string
 }
 
 variable "template_name" {
-  default = "TEMPLATE-W2019"
+  default = "Ubuntu-2204-Template-100GB-Thin"
   type    = string
 }
 
@@ -59,15 +59,15 @@ variable "private_IP" {
   type        = list(string)
   default = [
     "",
-    "10.200.43.100",
-    "10.200.43.101",
-    "10.200.43.111",
-    "10.200.43.112",
-    "10.200.43.113",
-    "10.200.43.114",
-    "10.200.43.115",
-    "10.200.43.116",
-    "10.200.43.102",
-    "10.200.43.103",
+    "192.168.0.5",
+    "192.168.1.5",
+    "192.168.2.5",
+    "192.168.3.5",
+    "192.168.4.5",
+    "192.168.5.5",
+    "192.168.6.5",
+    "192.168.7.5",
+    "192.168.8.5",
+    "192.168.9.5",
   ]
 }
