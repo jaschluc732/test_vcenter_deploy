@@ -14,7 +14,7 @@ data "vsphere_network" "network" {
   datacenter_id = data.vsphere_datacenter.datacenter.id
 }
 data "vsphere_virtual_machine" "template" {
-  name          = "/${var.dc}/vm/$var.template-folder/${var.template_name}"
+  name          = "/${var.datacenter}/vm/$var.template-folder/${var.template_name}"
   datacenter_id = data.vsphere_datacenter.datacenter.id
 }
 
@@ -86,11 +86,10 @@ resource "vsphere_virtual_machine" "vm" {
 
     customize {
 
-      windows_options {
+      linux_options {
 
         computer_name  = "${var.VM_Name}-${count.index + 1}"
-        workgroup      = "Terraform"
-        admin_password = "Str0ngP@ssw0rd!"
+        
 
       }
       timeout = 60
@@ -101,6 +100,8 @@ resource "vsphere_virtual_machine" "vm" {
 
 
       }
+      ipv4_gateway = var.gateway_IP[count.index + 1]
+      
       ipv4_gateway    = "10.200.43.126"
       dns_server_list = ["8.8.8.8", "4.4.4.4"]
 
