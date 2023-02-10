@@ -1,3 +1,11 @@
+locals {
+  templatevars = {
+    public_key   = var.public_key,
+    ssh_username = var.ssh_username
+  }
+}
+
+
 data "vsphere_datacenter" "dc" {
   name = var.datacenter
 }
@@ -83,6 +91,11 @@ resource "vsphere_virtual_machine" "vm" {
 
   clone {
     template_uuid = data.vsphere_virtual_machine.template.id
+    
+    extra_config = {
+    "guestinfo.userdata"          = base64encode(templatefile("${path.module}/templates/userdata.yaml", local.templatevars))
+    "guestinfo.userdata.encoding" = "base64"
+  }
 
     customize {
 
