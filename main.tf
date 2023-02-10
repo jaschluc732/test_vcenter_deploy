@@ -1,4 +1,4 @@
-data "vsphere_datacenter" "datacenter" {
+data "vsphere_datacenter" "dc" {
   name = var.datacenter
 }
 data "vsphere_datastore" "datastore" {
@@ -14,7 +14,7 @@ data "vsphere_network" "network" {
   datacenter_id = data.vsphere_datacenter.datacenter.id
 }
 data "vsphere_virtual_machine" "template" {
-  name          = "/${var.datacenter}/vm/TEMPLATE/${var.template_name}"
+  name          = "/${var.dc}/vm/$var.template-folder/${var.template_name}"
   datacenter_id = data.vsphere_datacenter.datacenter.id
 }
 
