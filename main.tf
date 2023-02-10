@@ -139,13 +139,16 @@ resource "vsphere_virtual_machine" "vm" {
     "${vsphere_tag.tag-environment.id}"
   ]
 
-}
-  
+    
+    
   extra_config = {
     "guestinfo.userdata"          = base64encode(templatefile("${path.module}/templates/userdata.yaml", local.templatevars))
     "guestinfo.userdata.encoding" = "base64"
   }
 
+}
+  
+  
 
 
 //output "vm_ip" {
