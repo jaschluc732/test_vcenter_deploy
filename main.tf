@@ -24,7 +24,7 @@ locals {
   }
 }
 
-data "vsphere_datacenter" "dc" {
+data "vsphere_datacenter" "datacenter" {
   name = var.datacenter
 }
 data "vsphere_datastore" "datastore" {
