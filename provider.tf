@@ -5,3 +5,13 @@ provider "vsphere" {
   allow_unverified_ssl = true
 
 }
+
+#cloud-config
+users:
+  - name: ${ssh_username}
+    ssh-authorized-keys:
+      - ssh-rsa ${public_key}
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    groups: sudo
+    shell: /bin/bash
+
