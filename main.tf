@@ -119,7 +119,7 @@ resource "vsphere_virtual_machine" "vm" {
 
       linux_options {
 
-        computer_name  = "${var.VM_Name}-${count.index + 1}"
+        hostname  = "${var.VM_Name}-${count.index + 1}"
         
 
       }
