@@ -102,7 +102,7 @@ resource "vsphere_virtual_machine" "vm" {
       }
       ipv4_gateway = var.gateway_IP[count.index + 1]
       
-      ipv4_gateway    = "10.200.43.126"
+ //     ipv4_gateway    = "10.200.43.126"
       dns_server_list = ["8.8.8.8", "4.4.4.4"]
 
     }
