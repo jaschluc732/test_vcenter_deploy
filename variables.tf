@@ -54,6 +54,10 @@ variable "varcountip" {
 
 }
 
+variable "vm-domain" {
+  description = "DOMAIN NAME?"
+}
+  
 variable "ssh_username" {
   default = "ubuntu"
   type    = string
