@@ -1,10 +1,19 @@
+
+terraform {
+  required_providers {
+    vsphere = {
+      source = "hashicorp/vsphere"
+      version = "2.2.0"
+    }
+  }  
+}
+
 locals {
   templatevars = {
     public_key   = var.public_key,
     ssh_username = var.ssh_username
   }
 }
-
 
 data "vsphere_datacenter" "dc" {
   name = var.datacenter
