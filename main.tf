@@ -109,11 +109,7 @@ resource "vsphere_virtual_machine" "vm" {
 
   clone {
     template_uuid = data.vsphere_virtual_machine.template.id
-  } 
-    extra_config = {
-    "guestinfo.userdata"          = base64encode(templatefile("${path.module}/templates/userdata.yaml", local.templatevars))
-    "guestinfo.userdata.encoding" = "base64"
-  }
+ 
 
     customize {
 
@@ -137,13 +133,18 @@ resource "vsphere_virtual_machine" "vm" {
       dns_server_list = ["8.8.8.8", "4.4.4.4"]
 
     }
-  
+  }
   
   tags = [
     "${vsphere_tag.tag-environment.id}"
   ]
 
 }
+  
+  extra_config = {
+    "guestinfo.userdata"          = base64encode(templatefile("${path.module}/templates/userdata.yaml", local.templatevars))
+    "guestinfo.userdata.encoding" = "base64"
+  }
 
 
 
