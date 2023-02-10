@@ -115,7 +115,7 @@ resource "vsphere_virtual_machine" "vm" {
 
       linux_options {
 
-        hostname  = "${var.VM_Name}-${count.index + 1}"
+        host_name  = "${var.VM_Name}-${count.index + 1}"
         
 
       }
