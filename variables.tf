@@ -63,6 +63,8 @@ variable "public_key" {
   type       = string
   default    = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGWI9K1SR2jZ75LtFbbGJjoVbOlmSPs4Vwr4Xn7cQDM8 jaschluckbier@gmail.com"  
 
+}  
+  
 variable "private_IP" {
   description = "Avaliable IP"
   type        = list(string)
