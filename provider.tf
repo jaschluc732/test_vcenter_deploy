@@ -8,9 +8,9 @@ provider "vsphere" {
 
 #cloud-config
 users:
-  - name: ${ssh_username}
+  - name: var.ssh_username
     ssh-authorized-keys:
-      - ssh-rsa ${public_key}
+      - ssh-rsa var.public_key
     sudo: ['ALL=(ALL) NOPASSWD:ALL']
     groups: sudo
     shell: /bin/bash
