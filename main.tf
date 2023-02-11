@@ -40,7 +40,7 @@ data "vsphere_network" "network" {
   datacenter_id = data.vsphere_datacenter.datacenter.id
 }
 data "vsphere_virtual_machine" "template" {
-  name          = "/${var.datacenter}/vm/$var.template-folder/${var.template_name}"
+  name          = "/${var.datacenter}/vm/${var.template_folder}/${var.template_name}"
   datacenter_id = data.vsphere_datacenter.datacenter.id
 }
 
