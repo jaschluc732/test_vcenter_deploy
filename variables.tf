@@ -34,7 +34,7 @@ variable "network_name" {
   type    = string
 }
 
-variable "template-folder" {
+variable "template_folder" {
   default = "Templates"
   type    = string
 }  
