@@ -34,6 +34,11 @@ variable "network_name" {
   type    = string
 }
 
+variable "template-folder" {
+  default = "Templates"
+  type    = string
+}  
+  
 variable "template_name" {
   default = "Ubuntu-2204-Template-100GB-Thin"
   type    = string
