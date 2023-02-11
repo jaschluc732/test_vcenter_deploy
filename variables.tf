@@ -54,7 +54,7 @@ variable "varcountip" {
 
 }
 
-variable "vm-domain" {
+variable "domain" {
   description = "DOMAIN NAME?"
 }
   
