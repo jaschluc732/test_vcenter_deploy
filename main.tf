@@ -68,9 +68,6 @@ resource "vsphere_virtual_machine" "vm" {
   num_cpus         = 4
   memory           = 4096
   guest_id         = data.vsphere_virtual_machine.template.guest_id
-  folder           = "LAB"
-  scsi_type        = data.vsphere_virtual_machine.template.scsi_type
-  firmware         = data.vsphere_virtual_machine.template.firmware
 
 
   network_interface {
