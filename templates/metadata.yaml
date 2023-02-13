@@ -1,16 +1,16 @@
 #cloud-config
-local-hostname: var.VM_Name
-instance-id: var.VM_Name
+local-hostname: ${var.VM_Name}-${count.index + 1}
+instance-id: ${var.VM_Name}-${count.index + 1}
 network:
   version: 2
   ethernets:
     ens192:
       dhcp4: false
       addresses:
-        - var.private_IP/24
-      gateway4: var.gateway_IP
+        - ${var.private_IP[count.index + 1]}/24
+      gateway4: ${var.gateway_IP[count.index + 1]}
       nameservers:
-        addresses: var.dns_server
+        addresses: ${var.dns_server}
 growpart:
   mode: auto
   devices: ['/dev/sda2']
