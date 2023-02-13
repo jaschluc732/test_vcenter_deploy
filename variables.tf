@@ -52,6 +52,7 @@ variable "template_name" {
 
 variable "VM_Name" {
   description = "VM NAME?"
+  type        = string
 
 }
 variable "vm_count" {
@@ -67,6 +68,7 @@ variable "varcountip" {
 
 variable "domain" {
   description = "DOMAIN NAME?"
+  type        = string
 }
   
 variable "ssh_username" {
