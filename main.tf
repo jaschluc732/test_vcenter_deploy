@@ -20,7 +20,11 @@ provider "vsphere" {
 locals {
   templatevars = {
     public_key   = var.public_key,
-    ssh_username = var.ssh_username
+    ssh_username = var.ssh_username,
+    name         = var.VM_Name,
+    ipv4_address = var.ipv4_address,
+    ipv4_gateway = var.ipv4_gateway,
+    dns_server   = var.dns_server_list[0]
   }
 }
 
