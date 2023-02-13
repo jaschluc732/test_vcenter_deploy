@@ -146,6 +146,8 @@ resource "vsphere_virtual_machine" "vm" {
   extra_config = {
     "guestinfo.userdata"          = base64encode(templatefile("${path.module}/templates/userdata.yaml", local.templatevars))
     "guestinfo.userdata.encoding" = "base64"
+    "guestinfo.metadata"          = base64encode(templatefile("${path.module}/templates/metadata.yaml", local.templatevars))
+    "guestinfo.metadata.encoding" = "base64"
   }
 
 }
