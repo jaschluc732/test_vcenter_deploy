@@ -71,8 +71,8 @@ variable "varcountip" {
 }
 
 variable "domain" {
-  description = "DOMAIN NAME?"
-  type        = string
+  default = "vrf" 
+  type    = string
 }
   
 variable "ssh_username" {
