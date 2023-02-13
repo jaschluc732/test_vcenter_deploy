@@ -39,7 +39,7 @@ variable "dns_server" {
   default = "8.8.8.8"
 }
 
-variable "ipv4_netmask {
+variable "ipv4_netmask" {
   type   = string
   default = 24
 }  
