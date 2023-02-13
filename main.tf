@@ -24,6 +24,7 @@ locals {
     name         = var.VM_Name,
     ipv4_address = var.private_IP,
     ipv4_gateway = var.gateway_IP,
+    domain       = var.domain,
     dns_server   = var.dns_server_list
   }
 }
