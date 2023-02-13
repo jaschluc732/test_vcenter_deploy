@@ -127,7 +127,7 @@ resource "vsphere_virtual_machine" "vm" {
       network_interface {
 
         ipv4_address = var.private_IP[count.index + 1]
-        ipv4_netmask = ${var.ipv4_netmask}
+        ipv4_netmask = var.ipv4_netmask
 
 
       }
