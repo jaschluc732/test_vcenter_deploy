@@ -10,7 +10,7 @@ network:
         - ${ipv4_address}/24
       gateway4: ${ipv4_gateway}
       nameservers:
-        search: [home]
+        search: ${domain}
         addresses: [${dns_server_1}, ${dns_server_2}]
 growpart:
   mode: auto
