@@ -21,7 +21,7 @@ locals {
   templatevars = {
     public_key   = var.public_key,
     ssh_username = var.ssh_username,
-    name         = var.VM_Name,
+    host_name    = var.VM_Name,
     ipv4_address = var.private_IP,
     ipv4_gateway = var.gateway_IP,
     ipv4_netmask = var.ipv4_netmask,
