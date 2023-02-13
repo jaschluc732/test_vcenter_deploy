@@ -113,30 +113,30 @@ resource "vsphere_virtual_machine" "vm" {
     template_uuid = data.vsphere_virtual_machine.template.id
  
 
-    customize {
+  //  customize {
 
-      linux_options {
+  //    linux_options {
 
-        host_name  = "${var.VM_Name}-${count.index + 1}"
-        domain = "${var.domain}${count.index + 1}"
+  //      host_name  = "${var.VM_Name}-${count.index + 1}"
+  //     domain = "${var.domain}${count.index + 1}"
         
 
-      }
-      timeout = 60
-      network_interface {
+  //    }
+  //    timeout = 60
+  //    network_interface {
 
-        ipv4_address = var.private_IP[count.index + 1]
-        ipv4_netmask = var.ipv4_netmask
+  //      ipv4_address = var.private_IP[count.index + 1]
+  //      ipv4_netmask = var.ipv4_netmask
 
 
-      }
-      ipv4_gateway = var.gateway_IP[count.index + 1]
+  //    }
+  //    ipv4_gateway = var.gateway_IP[count.index + 1]
       
  //     ipv4_gateway    = "10.200.43.126"
  //     dns_server = var.dns_server
 
-    }
-  }
+ //   }
+ // }
   
   tags = [
     "${vsphere_tag.tag-environment.id}"
