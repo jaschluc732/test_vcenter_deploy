@@ -10,7 +10,7 @@ network:
         - ${ipv4_address}/24
       gateway4: ${ipv4_gateway}
       nameservers:
-        addresses: ${dns_server}
+        addresses: var.dns_server
 growpart:
   mode: auto
   devices: ['/dev/sda2']
