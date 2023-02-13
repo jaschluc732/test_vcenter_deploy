@@ -10,7 +10,6 @@ network:
         - ${ipv4_address}/24
       gateway4: ${ipv4_gateway}
       nameservers:
-        search: [vrf]
         addresses: ${dns_server}
 growpart:
   mode: auto
