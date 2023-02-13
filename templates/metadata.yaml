@@ -1,14 +1,14 @@
 #cloud-config
-local-hostname: ${host_name}
-instance-id: ${host_name}
+local-hostname: var.VM_Name
+instance-id: var.VM_Name
 network:
   version: 2
   ethernets:
     ens192:
       dhcp4: false
       addresses:
-        - ${ipv4_address}/24
-      gateway4: ${ipv4_gateway}
+        - var.private_IP/24
+      gateway4: var.gateway_IP
       nameservers:
         addresses: var.dns_server
 growpart:
