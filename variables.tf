@@ -34,6 +34,12 @@ variable "network_name" {
   type    = string
 }
 
+variable "dns_server_list" {
+  type   = string
+  default = "8.8.8.8"
+}
+
+
 variable "template_folder" {
   default = "Templates"
   type    = string
