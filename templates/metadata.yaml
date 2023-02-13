@@ -1,13 +1,13 @@
 #cloud-config
 local-hostname: ${name}
-instance-id: ubuntu-${name}
+instance-id: ${name}
 network:
   version: 2
   ethernets:
     ens192:
       dhcp4: false
       addresses:
-        - ${ipv4_address}/24
+        - ${ipv4_address}/${ipv4_netmask}
       gateway4: ${ipv4_gateway}
       nameservers:
         search: ${domain}
