@@ -136,7 +136,7 @@ resource "vsphere_virtual_machine" "vm" {
  //     dns_server = var.dns_server
 
  //   }
- // }
+  }
   
   tags = [
     "${vsphere_tag.tag-environment.id}"
