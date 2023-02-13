@@ -41,7 +41,7 @@ variable "dns_server" {
 
 variable "ipv4_netmask" {
   type   = number
-  default = 24
+  default = "24"
 }  
 
 variable "template_folder" {
