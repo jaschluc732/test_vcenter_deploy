@@ -40,7 +40,7 @@ variable "dns_server" {
 }
 
 variable "ipv4_netmask" {
-  type   = string
+  type   = number
   default = 24
 }  
 
