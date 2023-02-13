@@ -21,11 +21,11 @@ locals {
   templatevars = {
     public_key   = var.public_key,
     ssh_username = var.ssh_username,
-    host_name    = var.VM_Name,
-    ipv4_address = var.private_IP,
-    ipv4_gateway = var.gateway_IP,
-    ipv4_netmask = var.ipv4_netmask,
-    dns_server   = var.dns_server
+ //   host_name    = var.VM_Name,
+ //   ipv4_address = var.private_IP,
+ //   ipv4_gateway = var.gateway_IP,
+ //   ipv4_netmask = var.ipv4_netmask,
+ //   dns_server   = var.dns_server
   }
 }
 
@@ -147,7 +147,7 @@ resource "vsphere_virtual_machine" "vm" {
   extra_config = {
     "guestinfo.userdata"          = base64encode(templatefile("${path.module}/templates/userdata.yaml", local.templatevars))
     "guestinfo.userdata.encoding" = "base64"
-    "guestinfo.metadata"          = base64encode(templatefile("${path.module}/templates/metadata.yaml", local.templatevars))
+    "guestinfo.metadata"          = base64encode(templatefile("${path.module}/templates/metadata.yaml"))
     "guestinfo.metadata.encoding" = "base64"
   }
 
