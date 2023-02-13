@@ -22,8 +22,8 @@ locals {
     public_key   = var.public_key,
     ssh_username = var.ssh_username,
     name         = var.VM_Name,
-    ipv4_address = var.ipv4_address,
-    ipv4_gateway = var.ipv4_gateway,
+    ipv4_address = var.private_IP,
+    ipv4_gateway = var.gateway_IP,
     dns_server   = var.dns_server_list[0]
   }
 }
