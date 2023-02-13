@@ -34,7 +34,7 @@ variable "network_name" {
   type    = string
 }
 
-variable "dns_server_list" {
+variable "dns_server" {
   type   = string
   default = "8.8.8.8"
 }
